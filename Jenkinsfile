@@ -40,7 +40,7 @@ pipeline {
         branch 'feature*'
       }
       agent {
-        docker {
+        any {
           // If you only use a single runtime, replace with a proper image from 
           // https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-image-repositories.html
           // And remove --use-container option in sam build command below
