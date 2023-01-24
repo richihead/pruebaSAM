@@ -45,6 +45,7 @@ pipeline {
           // https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-image-repositories.html
           // And remove --use-container option in sam build command below
           image 'public.ecr.aws/sam/build-provided'
+          sh "chmod 777 /var/run/docker.sock"
           args '--user 0:0 -v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
